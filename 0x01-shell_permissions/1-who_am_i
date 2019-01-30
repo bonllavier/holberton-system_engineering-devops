@@ -1,2 +1,2 @@
 #!/bash/bin
-id -un
+whoami
