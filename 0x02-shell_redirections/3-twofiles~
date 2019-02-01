@@ -1,0 +1,2 @@
+#!/bin/bash
+diff -y /etc/passwd /etc/host
