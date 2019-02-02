@@ -1,2 +1,2 @@
 #!/bin/bash
-find -type f -printf "%f \n"|sort -n
+ls -p | grep -v /
