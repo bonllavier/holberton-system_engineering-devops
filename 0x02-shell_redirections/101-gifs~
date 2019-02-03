@@ -1,0 +1,2 @@
+#!/bin/bash
+find -printf "%f\n" | sort | cut -f 1 -d '.'
