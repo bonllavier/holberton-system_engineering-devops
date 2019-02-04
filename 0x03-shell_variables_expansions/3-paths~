@@ -1,0 +1,3 @@
+#!/bin/bash
+echo -e "$PATH \n" | tr : \n
+alias dir1="echo "$PATH" | grep -o ":" | wc -l" | echo $(($(dir1)+1))
