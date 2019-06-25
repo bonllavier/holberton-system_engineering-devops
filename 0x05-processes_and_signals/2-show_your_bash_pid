@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# print current PID in another mode
+# shellcheck disable=SC2009
+ps auxf -A | grep "bash"
