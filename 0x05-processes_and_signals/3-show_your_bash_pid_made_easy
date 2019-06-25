@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# print current PID in another mode
+pgrep "bash" -l
