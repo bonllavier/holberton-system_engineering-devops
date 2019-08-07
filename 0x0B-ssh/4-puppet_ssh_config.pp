@@ -6,7 +6,7 @@ file { 'file':
   ensure => absent,
   path   => '/etc/ssh/sshd_config',
   line   => 'PasswordAuthentication no',
-  match  => 'PasswordAuthentication yes',
+  match  => '^PasswordAuthentication.*',
 }
 -> file_line { 'Find Identity file':
   ensure => present,
