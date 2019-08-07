@@ -1,4 +1,7 @@
 # create a file in tmp folder
+file { '/etc/ssh/ssh_config':
+  ensure => present,
+}->
 file { 'file':
   ensure => absent,
   path   => '/etc/ssh/sshd_config',
