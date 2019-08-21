@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# 1. Install nginx web server
+# create web server 1. Install nginx web server
 sudo apt-get update
 sudo apt-get -y install nginx
 echo "Holberton School" | sudo tee /var/www/html/index.nginx-debian.html
