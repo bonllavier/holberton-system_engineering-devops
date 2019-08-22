@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# 4. Not found page 404
+# shellcheck disable=SC2154
+echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/error_404.html
+sudo sed -i "49i \\\terror_page 404 /404.html;\n\tlocation  /404.html {\n\t\troot /var/www/error/;\n\t\tinternal;\n\t}" /etc/nginx/sites-available/default
