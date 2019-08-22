@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# 3. Redirection
+sudo apt-get update -y
+sudo apt-get -y install nginx
+echo "Holberton School" | sudo tee /var/www/html/index.nginx-debian.html
+sudo sed -i "42i \\trewrite ^/(.*)$ http://newdomain.com/$1 permanent;" /etc/nginx/sites-available/default
+sudo service nginx start
