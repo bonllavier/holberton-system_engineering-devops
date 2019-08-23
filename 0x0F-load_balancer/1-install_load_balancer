@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # Install your load balancer
-apt-get install software-properties-common
-add-apt-repository ppa:vbernat/haproxy-1.6
+sudo apt-get install software-properties-common
+sudo add-apt-repository -y ppa:vbernat/haproxy-1.6
 sudo apt-get update -y
-apt-get install haproxy=1.6.\*
+sudo apt-get install haproxy=1.6.\*
 echo "ENABLED=1" |sudo tee -a /etc/default/haproxy
 echo -e "
 
