@@ -12,16 +12,18 @@ if __name__ == "__main__":
     with urllib.request.urlopen(url1) as response:
         html = response.read()
     dattod = json.loads(html.decode('utf-8'))
-    with urllib.request.urlopen('https://jsonplaceholder.typicode.com/users') as response:
+    url2 = 'https://jsonplaceholder.typicode.com/users'
+    with urllib.request.urlopen(url2) as response:
         html = response.read()
     datuser = json.loads(html.decode('utf-8'))
     tmp_dict = {}
     content = []
     for user in datuser:
         for item in dattod:
-            content.append({"task": item['title'],
-                        "completed": item['completed'],
-                        "username": user['username']})
+            if user['id'] == item['userId']:
+                content.append({"task": item['title'],
+                                "completed": item['completed'],
+                                "username": user['username']})
         tmp_dict = {user['id']: content}
     file1 = "{}.json".format("todo_all_employees")
     with open(file1, 'w') as emplo_file:
