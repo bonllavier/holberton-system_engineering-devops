@@ -19,12 +19,13 @@ if __name__ == "__main__":
     tmp_dict = {}
     content = []
     for user in datuser:
+        content = []
         for item in dattod:
-            if user['id'] == item['userId']:
-                content.append({"task": item['title'],
-                                "completed": item['completed'],
-                                "username": user['username']})
-        tmp_dict = {user['id']: content}
+            if int(user['id']) == int(item['userId']):
+                content.append({"username": user['username'],
+                                "task": item['title'],
+                                "completed": item['completed']})
+        tmp_dict.update({str(user['id']): content})
     file1 = "{}.json".format("todo_all_employees")
     with open(file1, 'w') as emplo_file:
         json.dump(tmp_dict, emplo_file)
